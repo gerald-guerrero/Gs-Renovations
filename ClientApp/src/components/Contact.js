@@ -10,7 +10,7 @@ export class Contact extends Component {
             name: '',
             email: '',
             phone: '',
-            details: ''
+            details: '',
         };
     }
 
@@ -20,9 +20,9 @@ export class Contact extends Component {
         const value = target.value;
 
         this.setState({
-            [name]: value
+            [name]: value,
         });
-    }
+    };
 
     handleSubmit = async (event) => {
         event.preventDefault();
@@ -30,9 +30,9 @@ export class Contact extends Component {
         const response = await fetch('/support', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state),
         });
 
         if (response.ok) {
@@ -41,17 +41,20 @@ export class Contact extends Component {
                 name: '',
                 email: '',
                 phone: '',
-                details: ''
+                details: '',
             });
         } else {
             alert('Failed to submit your request. Please try again later.');
         }
-    }
+    };
 
     render() {
         return (
             <div>
                 <h1>Contact Us</h1>
+                <p>
+                    If you have any questions or would like to schedule a consultation, please feel free to contact us using the form below. We will get back to you as soon as possible.
+                </p>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
