@@ -238,3 +238,6 @@ _Pvt_Extensions
 .env.development.local
 .env.test.local
 .env.production.local
+
+appsettings.json
+appsettings.Development.json

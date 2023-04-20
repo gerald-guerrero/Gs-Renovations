@@ -7,11 +7,21 @@ namespace Gs_Renovations.Controllers
     public class SupportController : ControllerBase
     {
         
-        [HttpGet]
-        [Route ("request")]
-        public string[] temp()
+        [HttpPost]
+        public async Task<IActionResult> SendMessage([FromBody] Dictionary<string, string> data)
         {
-            return new string[] { "Request Recieved" };
+            string name = data["name"];
+            string phone = data["phone"];
+            string email = data["email"];
+            string details = data["details"];
+            
+            Console.WriteLine(name);
+            Console.WriteLine(email);
+            Console.WriteLine(phone);
+            Console.WriteLine(details);
+            
+
+            return Ok();
         }
        
     }
