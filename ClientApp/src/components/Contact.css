@@ -1,0 +1,84 @@
+﻿/* Center the form and give it a max-width */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Style the form inputs */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    button[type="submit"]:hover {
+        background-color: #006080;
+    }
+
+/* Style the headings */
+h1,
+p {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    form {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    input,
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}

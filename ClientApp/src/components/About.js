@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './About.css';
 
 export class About extends Component {
     static displayName = About.name;
 
     render() {
         return (
-            <div>
+            <div className="AboutContainer">
                 <h1>About G's Renovations</h1>
                 <p>G's Renovations is a family-owned and operated home renovation business based in Atlanta, GA. We specialize in helping homeowners transform their living spaces into the homes of their dreams, with a focus on quality craftsmanship and attention to detail.</p>
 
