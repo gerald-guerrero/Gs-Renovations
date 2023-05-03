@@ -4,6 +4,10 @@
     padding: 50px 20px;
 }
 
+.banner {
+    width: 100%;
+}
+
 h1 {
   font-size: 3rem;
   text-align: center;
