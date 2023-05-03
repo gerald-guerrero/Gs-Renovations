@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Contact.css';
+import ContactImage from '../images/pexels-vlada-karpovich-4050388.jpg'
 
 export class Contact extends Component {
     static displayName = Contact.name;
@@ -52,6 +53,7 @@ export class Contact extends Component {
     render() {
         return (
             <div>
+                <img src={ContactImage} alt="Contact Banner" className="banner" />
                 <h1>Contact Us</h1>
                 <p>
                     If you have any questions or would like to schedule a consultation, please feel free to contact us using the form below. We will get back to you as soon as possible.

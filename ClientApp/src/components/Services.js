@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Services.css';
+import ServicesImage from '../images/AdobeStock_205125364.jpeg'
 
 export class Services extends Component {
     static displayName = Services.name;
@@ -7,6 +8,7 @@ export class Services extends Component {
     render() {
         return (
             <div className="ServicesContainer">
+                <img src={ServicesImage} alt="Services Banner" className="banner" />
                 <h1>Our Services</h1>
                 <p>At G's Renovations, we offer a wide range of home renovation services to help you create the home of your dreams. Our team of experts is dedicated to providing quality craftsmanship and exceptional customer service to every client. Below are some of the services we offer:</p>
 
