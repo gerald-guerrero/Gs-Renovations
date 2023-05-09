@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Home.css';
-import landingImage from '../images/AdobeStock_267445856.jpeg'
 import gs1 from '../images/gs-1.jpg';
 import gs2 from '../images/gs-2.jpg';
 import gs3 from '../images/gs-3.jpg';
@@ -14,7 +13,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <img src={landingImage} alt="Home Banner" className="banner"/>
+                
                 <h1>Welcome to G's Renovations</h1>
                 <p>We are a family-owned and operated home renovation business based in Atlanta, GA. With years of experience and a commitment to quality craftsmanship, we can help you transform your house into the home of your dreams.</p>
                 

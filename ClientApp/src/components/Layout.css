@@ -1,0 +1,25 @@
+﻿.BannerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+/*
+@media (max-width: 1300px) {
+    .BannerImage {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .BannerImage {
+        width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .BannerImage {
+        width: 100%;
+    }
+}
+*/
