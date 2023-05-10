@@ -52,12 +52,27 @@ export class Contact extends Component {
  
 
     render() {
+        let phoneSection;
+        try {
+            const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
+            phoneSection = (
+                <div>
+                    <h2>Call us: </h2>
+                    <p>{phoneNumber}</p>
+                </div>
+            );
+        } catch (e) {
+            phoneSection = (<div></div>);
+        }
+
         return (
             <div>
+                
                 <h1>Contact Us</h1>
                 <p>
-                    If you have any questions or would like to schedule a consultation, please feel free to contact us using the form below. We will get back to you as soon as possible.
+                    If you have any questions or would like to schedule a consultation, please feel free to give us a call or contact us using the form below. We will get back to you as soon as possible.
                 </p>
+                <div>{phoneSection}</div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
