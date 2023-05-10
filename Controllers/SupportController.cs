@@ -19,7 +19,7 @@ namespace Gs_Renovations.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost]
+        [HttpPost("submission")]
         public async Task<IActionResult> SendMessage([FromBody] Dictionary<string, string> data)
         {
             try
@@ -62,6 +62,13 @@ namespace Gs_Renovations.Controllers
                 Console.Error.WriteLine(ex.ToString());
                 return StatusCode(500);
             }
+        }
+
+        [HttpGet("phoneNumber")]
+        public IActionResult GetPhoneNumber()
+        {
+            var phoneNumber = _configuration["PhoneNumber"];
+            return Ok(phoneNumber);
         }
     }
 }
