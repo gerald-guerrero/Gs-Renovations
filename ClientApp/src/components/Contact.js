@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Contact.css';
 
+
 export class Contact extends Component {
     static displayName = Contact.name;
 
@@ -12,7 +13,21 @@ export class Contact extends Component {
             email: '',
             phone: '',
             details: '',
+            phoneNumber: '',
         };
+    }
+
+    async componentDidMount() {
+        try {
+            const response = await fetch('/support/phoneNumber');       
+            const data = await response.text();
+            console.log(data);
+            this.setState({
+                phoneNumber: data,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     handleInputChange = (event) => {
@@ -28,7 +43,7 @@ export class Contact extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const response = await fetch('/support', {
+        const response = await fetch('/support/submission', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,21 +64,8 @@ export class Contact extends Component {
         }
     };
 
- 
-
     render() {
-        let phoneSection;
-        try {
-            const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
-            phoneSection = (
-                <div>
-                    <h2>Call us: </h2>
-                    <p>{phoneNumber}</p>
-                </div>
-            );
-        } catch (e) {
-            phoneSection = (<div></div>);
-        }
+
 
         return (
             <div>
@@ -72,7 +74,10 @@ export class Contact extends Component {
                 <p>
                     If you have any questions or would like to schedule a consultation, please feel free to give us a call or contact us using the form below. We will get back to you as soon as possible.
                 </p>
-                <div>{phoneSection}</div>
+                <div>
+                    <h2>Call Us:</h2>
+                    <p>{this.state.phoneNumber}</p>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
