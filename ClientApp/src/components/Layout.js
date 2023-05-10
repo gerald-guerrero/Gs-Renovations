@@ -11,11 +11,11 @@ import AboutImage from '../images/AdobeStock_127920403.jpeg'
 function RouteDetails() {
     const location = useLocation();
     var bannerImage;
-    if (location.pathname == '/') {
+    if (location.pathname === '/') {
         bannerImage = HomeImage;
-    } else if (location.pathname == '/services') {
+    } else if (location.pathname === '/services') {
         bannerImage = ServicesImage;
-    } else if (location.pathname == '/contact') {
+    } else if (location.pathname === '/contact') {
         bannerImage = ContactImage;
     } else {
         bannerImage = AboutImage;
